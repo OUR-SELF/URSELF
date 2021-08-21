@@ -30,7 +30,7 @@ const ProjectList = () => {
 export default ProjectList;
 
 const Container = styled.div`
-  width: 1000px;
+  width: 80vw;
   margin: 0 auto;
 `;
 
