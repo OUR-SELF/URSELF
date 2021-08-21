@@ -24,7 +24,7 @@ const Login = () => {
           </div>
           <Link>아이디/비밀번호 찾기 ></Link>
         </StringItem>
-        <PurpleButton>로그인</PurpleButton>
+        <PurpleButton to="/">로그인</PurpleButton>
         <Line />
         <SocialButton type="google" content="Google로 로그인" />
         <SocialButton type="kakao" content="카카오톡으로 로그인" />

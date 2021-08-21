@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const PurpleButton = ({ children }) => {
+const PurpleButton = ({ to, children }) => {
   return (
-    <Button>
+    <Button to={to}>
       <Content>{children}</Content>
     </Button>
   );
@@ -12,7 +12,7 @@ const PurpleButton = ({ children }) => {
 
 export default PurpleButton;
 
-const Button = styled.button`
+const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
