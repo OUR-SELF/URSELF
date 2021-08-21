@@ -53,7 +53,7 @@ const EmailSignUp = () => {
           </div>
         </StringItem>
 
-        <PurpleButton>회원가입</PurpleButton>
+        <PurpleButton to="/login">회원가입</PurpleButton>
 
         <AskItem>
           <span>이미 회원이신가요?</span>
