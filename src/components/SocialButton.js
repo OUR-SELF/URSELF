@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { FcGoogle } from 'react-icons/fc';
+import { AiOutlineMail } from 'react-icons/ai';
 
-const SocialButton = ({ type, content }) => {
+const SocialButton = ({ type, content, to }) => {
   return (
     <>
-      <Button>
+      <Button to={to}>
         {type === 'google' && <FcGoogle size={18} />}
         {type === 'kakao' && <Kakao />}
         {type === 'naver' && <Naver />}
-
+        {type === 'email' && <AiOutlineMail size={18} />}
         <Content>{content}</Content>
       </Button>
     </>
@@ -18,7 +20,7 @@ const SocialButton = ({ type, content }) => {
 
 export default SocialButton;
 
-const Button = styled.button`
+const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

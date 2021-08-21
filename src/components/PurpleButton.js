@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const PurpleButton = () => {
+const PurpleButton = ({ children }) => {
   return (
     <Button>
-      <Content>로그인</Content>
+      <Content>{children}</Content>
     </Button>
   );
 };
