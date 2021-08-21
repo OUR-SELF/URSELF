@@ -3,11 +3,6 @@ import { reset } from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
 	${reset}
-
-
-
-
-
   @font-face {
     font-family: 'GmarketSansMedium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
@@ -22,14 +17,19 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
   @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  
+
+
+
   * {
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+
   }
   html {
     font-size: 62.5%;
   }
   a {
+
     color: inherit;
     text-decoration: none;
   }

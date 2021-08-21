@@ -5,6 +5,36 @@ const Image = styled.img`
     height:400px;
     
 `;
+const FirstComment= styled.div`
+    font-family: 'GmarketSansBold', sans-serif;
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    left:6%;
+    bottom:75%;
+`;
+const SecondComment= styled.div`
+    font-family: 'GmarketSansBold', sans-serif;
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    left:65%;
+    bottom:20%;
+`;
+const NameComment=styled.div`
+    font-size:30px;
+    color:#6432B7;
+`;
+const NormalComment=styled.div`
+    font-size:30px;
+    color:black;
+`;
+const CommentContainer=styled.div`
+    display:flex;
+    
+    
+`
+
 function Imageslide() {
     return (
         <div>
@@ -15,12 +45,29 @@ function Imageslide() {
                         src="/img/carousel__img.jpg"
                         alt="First slide">
                     </Image>
-                        <div style={{position:"absolute",display:"flex",left:"10%",bottom:"75%"}}>
-
-                            <h3></h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                        
+                        <FirstComment >
+                            <CommentContainer>
+                                <NameComment>한식매니아</NameComment>
+                                <NormalComment>님이 제안한 김밥세트</NormalComment>
+                            </CommentContainer>
+                            <CommentContainer>
+                                <NameComment>동원식품</NameComment>
+                                <NormalComment>에서 참여</NormalComment>
+                            </CommentContainer>
+                            
+                        </FirstComment>
+                        <SecondComment>
+                            <CommentContainer>
+                                <NormalComment >총&nbsp; </NormalComment>
+                                <NameComment>56,194,000</NameComment>
+                                <NormalComment> 원 펀딩</NormalComment>
+                            </CommentContainer>
+                            <CommentContainer>
+                                <NormalComment >총&nbsp; </NormalComment>
+                                <NameComment>4,894</NameComment>
+                                <NormalComment>명 참여</NormalComment>
+                            </CommentContainer>
+                        </SecondComment>
                     
                 </Carousel.Item>
                 <Carousel.Item>
@@ -30,10 +77,29 @@ function Imageslide() {
                         alt="First slide">
                     </Image>
 
-                    <Carousel.Caption style={{position:"absolute",color:"black"}} >
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
+                    <FirstComment >
+                            <CommentContainer>
+                                <NameComment>한식매니아</NameComment>
+                                <NormalComment>님이 제안한 김밥세트</NormalComment>
+                            </CommentContainer>
+                            <CommentContainer>
+                                <NameComment>동원식품</NameComment>
+                                <NormalComment>에서 참여</NormalComment>
+                            </CommentContainer>
+                            
+                        </FirstComment>
+                        <SecondComment>
+                            <CommentContainer>
+                                <NormalComment > 총&nbsp; </NormalComment>
+                                <NameComment>56,194,000</NameComment>
+                                <NormalComment> 원 펀딩</NormalComment>
+                            </CommentContainer>
+                            <CommentContainer>
+                                <NormalComment > 총&nbsp; </NormalComment>
+                                <NameComment>4,894</NameComment>
+                                <NormalComment>명 참여</NormalComment>
+                            </CommentContainer>
+                        </SecondComment>
                 </Carousel.Item>
                 <Carousel.Item>
                     <Image
@@ -42,10 +108,29 @@ function Imageslide() {
                         alt="First slide">
                     </Image>
 
-                    <Carousel.Caption style={{position:"absolute",color:"black"}} >
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
+                    <FirstComment >
+                            <CommentContainer>
+                                <NameComment>한식매니아</NameComment>
+                                <NormalComment>님이 제안한 김밥세트</NormalComment>
+                            </CommentContainer>
+                            <CommentContainer>
+                                <NameComment>동원식품</NameComment>
+                                <NormalComment>에서 참여</NormalComment>
+                            </CommentContainer>
+                            
+                        </FirstComment>
+                        <SecondComment>
+                            <CommentContainer>
+                                <NormalComment > 총&nbsp; </NormalComment>
+                                <NameComment>56,194,000</NameComment>
+                                <NormalComment> 원 펀딩</NormalComment>
+                            </CommentContainer>
+                            <CommentContainer>
+                                <NormalComment > 총&nbsp; </NormalComment>
+                                <NameComment>4,894</NameComment>
+                                <NormalComment>명 참여</NormalComment>
+                            </CommentContainer>
+                        </SecondComment>
                 </Carousel.Item>
             </Carousel>
         </div>

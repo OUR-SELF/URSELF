@@ -15,15 +15,16 @@ padding-bottom:5%;`;
 
 
 const Container= styled.div`
-margin-left:8%;
-margin-right:8%;
+max-width:1100px;
+margin:auto;
 display:flex;
 flex-direction:column;
 justify-content:center;
 text-align:center;`;
 
 const CarouselContainer = styled.div`
-
+  max-width:1100px;
+  margin:auto;
   width:100%;
   height:30%;
 `;

@@ -13,19 +13,20 @@ text-align:center;`;
 
 const Top = styled.div`
 font-family: 'GmarketSansBold', sans-serif;
-border-bottom: 1px solid rgba(0, 0, 0, 0.48);
+
 display:flex;
 justify-content:space-between;
 text-align:center;
-margin-bottom:100px;
+margin-bottom:5%;
 `;
 
 const Plus= styled.div`
 font-family: 'GmarketSansMedium',sans-serif;
-font-size:12px;
-display:flex;
-flex-direction:column;
-margin-top:10%;
+font-size:15px;
+width:60px;
+margin-top:110%;
+padding-right:5%;
+
 `;
 
 const Title= styled.span`
@@ -52,7 +53,7 @@ function HomeIdea() {
         <Container>
             <Top>
                 <Title>펀딩중인 아이디어</Title>
-                <Link to="/"><Plus>더보기</Plus></Link>
+                <Link to="/project"><Plus>더보기</Plus></Link>
             </Top>
             <CardContainer>
                 {maplist}
