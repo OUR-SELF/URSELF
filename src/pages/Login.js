@@ -24,15 +24,15 @@ const Login = () => {
           </div>
           <Link>아이디/비밀번호 찾기 ></Link>
         </StringItem>
-        <PurpleButton />
+        <PurpleButton>로그인</PurpleButton>
         <Line />
         <SocialButton type="google" content="Google로 로그인" />
         <SocialButton type="kakao" content="카카오톡으로 로그인" />
         <SocialButton type="naver" content="네이버로 로그인" />
-        <StringItem2>
+        <AskItem>
           <span>처음 방문하셨나요?</span>
-          <Link>회원가입</Link>
-        </StringItem2>
+          <Link to="/signup">회원가입</Link>
+        </AskItem>
       </Wrapper>
     </Container>
   );
@@ -57,24 +57,23 @@ const Item = styled.div`
   flex-direction: column;
   margin-bottom: 15px;
   label {
-      margin-bottom: 7.5px;
-  }
+    margin-bottom: 7.5px;
   }
 `;
 
-const StringItem = styled.div`
+const AskItem = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15px;
-`;
-
-const StringItem2 = styled(StringItem)`
   justify-content: center;
   margin: 20px 0 15px;
   span {
     margin-right: 5px;
   }
+`;
+
+const StringItem = styled(AskItem)`
+  justify-content: space-between;
+  margin-bottom: 15px;
 `;
 
 const Title = styled.h1`

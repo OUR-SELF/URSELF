@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
   }
   a {
+    font-family: 'Noto Sans KR', sans-serif;
     color: inherit;
     text-decoration: none;
   }
