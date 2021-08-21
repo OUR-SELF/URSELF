@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import SocialButton from 'components/SocialButton';
 import PurpleButton from 'components/PurpleButton';
 
 const EmailSignUp = () => {
