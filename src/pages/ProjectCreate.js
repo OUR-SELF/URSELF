@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components/macro';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SelectMenu from 'components/SelectMenu';
 import DatePicker from 'components/DatePicker';
-import {  BASE_URL } from 'data';
+import { BASE_URL } from 'data';
 
 const ProjectCreate = () => {
+  const history = useHistory();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [date, setDate] = useState('');
@@ -48,12 +50,12 @@ const ProjectCreate = () => {
       target_amount: 200000,
       target_count: 60,
       matched: false,
-      liked: 100,
     };
     axios
       .post(BASE_URL + '/projects/', data)
       .then((response) => {
         console.log(response);
+        history.push('/project');
       })
       .catch((err) => console.log(err.response));
   };
