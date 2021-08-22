@@ -18,7 +18,7 @@ function Card(props) {
                 <Ava_img src={props.one.src}></Ava_img>
                 <Username>{props.one.username}</Username>
             </Character>
-            <ProgressBar style={{animated:"false",backgroundColor:"C4C4C4"}} now={0} />
+            <ProgressBar now={0} />
 
             <FirstInfo>
                 <SubInfo>
@@ -61,8 +61,10 @@ font-weight:500;
 padding:15px;
 display:flex;
 flex-direction:column;
-box-shadow: 1px 3px 3px 2px gray;
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 border-radius: 5%;
+margin-right:30px;
+margin-bottom: 50px;
 `;
 const Title= styled.div`
     font-weight:700;
