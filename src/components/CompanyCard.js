@@ -34,6 +34,7 @@ const Image=styled.img`
     width:100%;
 `;
 const CompanyCardContainer=styled.div`
+    box-shadow: 1px 3px 3px 2px gray;
     max-width:230px;
     font-family: 'GmarketSansMedium', sans-serif;
     display:flex;

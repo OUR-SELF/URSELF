@@ -52,12 +52,10 @@ const Image= styled.img`
 `;
 const CardContainer=styled.div`
 font-family: 'GmarketSansMedium', sans-serif;
-
 padding:15px;
 display:flex;
 flex-direction:column;
 box-shadow: 1px 3px 3px 2px gray;
-
 border-radius: 5%;
 
 `;
