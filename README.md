@@ -15,7 +15,7 @@ URSELF는 소비자가 기업에게 프로젝트를 제안하고 주도적으로
 ## 🙋‍♂️ 팀원 소개
 - [장하얀](https://github.com/white-jang) : PM / Backend Developer
 - [김지훈](https://github.com/Hoonveloper) : Frontend Developer
-- [윤맑은이슬](https://github.com/irisdew) : Frontend
+- [윤맑은이슬](https://github.com/irisdew) : Frontend Developer
 - 윤한세 : Project Designer
 - 김상현: Project Designer
 
