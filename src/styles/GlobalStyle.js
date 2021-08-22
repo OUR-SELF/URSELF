@@ -30,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     color: inherit;
     text-decoration: none;
+    :hover {
+      color: #2c0385;
+    }
   }
   ol,
   ul,
