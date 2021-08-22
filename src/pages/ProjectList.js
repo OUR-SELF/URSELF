@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{useEffect , useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { BiPlusCircle, BiChevronDown } from 'react-icons/bi';
 import Search from 'components/Search';
 import Card from 'components/Card';
-import axios from 'axios'
+import axios from 'axios';
 import { data } from 'data';
 
 const ProjectList = () => {
@@ -14,6 +14,26 @@ const ProjectList = () => {
   const maplist = list.map((one) => {
     return <Card one={one} />;
   });
+
+  
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+      axios.get('http://127.0.0.1:8000/projects/')
+      .then(response => {
+          setPosts(response.data); //projects 목록 받아서 posts배열에 저장.
+      })
+  }, [])
+  useEffect(()=>{
+      //console.log(posts);
+  },[posts])
+   
+  const mapposts = posts.map((one) => {
+    return (
+      <           Card one={one} />
+    );
+
+  })
+ 
 
   return (
     <>
@@ -33,7 +53,7 @@ const ProjectList = () => {
           <BiPlusCircle size={22} />
           <span>펀딩 아이디어 제안하기</span>
         </YellowButton>
-        <CardContainer>{maplist}</CardContainer>
+        <CardContainer>{mapposts}</CardContainer>
       </Container>
     </>
   );

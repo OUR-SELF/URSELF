@@ -43,32 +43,39 @@ text-align:center;
 
 function HomeIdea() {
     const [posts, setPosts] = useState([]);
+    const [first,setFirst]=useState();
+    const [second,setSecond]=useState();
+    const [third,setThird]=useState();
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/projects/')
         .then(response => {
-            setPosts(response.data); //projects 목록 받아서 posts배열에 저장.
+            const list=[];
+            list[0]=response.data[0];
+            list[1]=response.data[1];
+            list[2]=response.data[2];
+            setPosts(list); //projects 목록 받아서 posts배열에 저장.
         })
     }, [])
     useEffect(()=>{
-        console.log(posts);
+        setFirst(posts[0])
+        setSecond(posts[1])
+        setThird(posts[2])
+        console.log(first);
+        console.log(second);
+        console.log(third);
+
     },[posts])
 
-    const list=[{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
-    {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
-    {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"}];
-    const maplist =list.map((one)=> {
-        return (
+ 
+
+    const mapposts=posts.map((one)=>{
+        return(
             <Card one={one}/>
         );
 
     })
 
-    const mapposts=posts.map((one)=>{
-        return(
-<           Card one={one}/>
-        );
-
-    })
+   
     return (
         <Container>
             <Top>
@@ -76,7 +83,7 @@ function HomeIdea() {
                 <Link to="/project"><Plus>더보기</Plus></Link>
             </Top>
             <CardContainer>
-                {mapposts}
+               {mapposts}
             </CardContainer>
                 
         </Container>

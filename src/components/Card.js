@@ -2,21 +2,56 @@ import React ,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { ProgressBar } from 'react-bootstrap';
+import axios from 'axios'
 function Card(props) {
+    const [name,setName]=useState("");
+    const [imgaddress,SetImgadress]=useState("");
+    const [userimg,setUserimg]=useState("");
+    const [url,Seturl]=useState("");
+    useEffect(() => {
+        var imgaddress="http://127.0.0.1:8000";
+        imgaddress+=props.one.thumbnail_image;
+        SetImgadress(imgaddress);
+        var user_img_add="http://127.0.0.1:8000";
+        var moveToUrl='/project/';
+        moveToUrl+=props.one.id;
+        console.log(moveToUrl);
+        Seturl(moveToUrl)
+        axios.get('http://127.0.0.1:8000/users/')//userlist가져오기
+        .then(response => {
+            
+            var step;
+            for(step=0; step<response.data.length; step++){
+                if(props.one.user === response.data[step].id){ //props.one.user
+                    setName(response.data[step].name);
+                    user_img_add+=response.data[step].profile_img;
+                    setUserimg(user_img_add);
+                
+                }
+            }
+        })
+        
+    }, [])
+
+    useEffect(() => {
+       console.log(userimg);
+    }, [userimg])
+    
+
     const onClick=((e)=>{
         //좋아요 버튼 클릭 이벤트.
 
     });
     return (
         <CardContainer>
-            <Link to="/">
-                <Image src={props.one.src}></Image> 
+            <Link to={url}>
+                <Image src={imgaddress}></Image> 
                 <Title>{props.one.name}</Title>
             </Link>
             <Category>{props.one.category}</Category>
             <Character>
-                <Ava_img src={props.one.src}></Ava_img>
-                <Username>{props.one.username}</Username>
+                <Ava_img src={userimg}></Ava_img>
+                <Username>{name}</Username>
             </Character>
             <ProgressBar now={0} />
 
