@@ -6,9 +6,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <div>
-        <Link to="/">
-          <Logo alt="logo" src="/images/URSELF-logo.png" />
-        </Link>
+        
         <Link to="/project">제안된 프로젝트</Link>
         <Link to="/company">함께하고 있는 기업</Link>
       </div>
