@@ -1,9 +1,12 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { BiPlusCircle, BiChevronDown } from 'react-icons/bi';
 import Search from 'components/Search';
 
 const ProjectList = () => {
+  const history = useHistory();
+
   return (
     <>
       <img alt="banner" src={'/images/top-banner.jpg'} />
@@ -18,7 +21,7 @@ const ProjectList = () => {
           </div>
         </SelectBar>
         <Line />
-        <YellowButton>
+        <YellowButton onClick={() => history.push('/project/create')}>
           <BiPlusCircle size={22} />
           <span>펀딩 아이디어 제안하기</span>
         </YellowButton>
