@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const CarouselContainer = styled.div`
-  max-width: 80vw;
+  max-width: 100vw;
   margin: 10px auto;
 `;
 
