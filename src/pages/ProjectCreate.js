@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components/macro';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -15,10 +16,10 @@ const ProjectCreate = () => {
   const [url, setUrl] = useState(
     'https://cdn-cziplee-estore.azureedge.net//cache/no_image_uploaded-253x190.png',
   );
-  const [purpose, setPurpose] = useState('');
-  const [detail, setDetail] = useState('');
+  const [intent, setIntent] = useState('');
+  const [details, setDetails] = useState('');
 
-  const handleChange = (event) => {
+  const handleThumbnailChange = (event) => {
     event.preventDefault();
     let reader = new FileReader();
     let file = event.target.files[0];
@@ -33,20 +34,30 @@ const ProjectCreate = () => {
   };
 
   const handleSubmit = () => {
+    console.log(url, typeof url);
     const data = {
+      user: 1,
       name: title,
       category,
-      end_date: new Date(date),
+      end_date: date,
       price: +price,
       comment: oneline,
-      intent: purpose,
-      details: detail,
+      intent,
+      details,
       counted_user_num: 0,
-      thumbnail_image: url,
+      target_amount: 200000,
+      target_count: 60,
       matched: false,
+      liked: 100,
     };
-    console.log(data);
+    axios
+      .post('http://127.0.0.1:8000/projects/', data)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch((err) => console.log(err.response));
   };
+
   return (
     <>
       <img alt="banner" src={'/images/top-banner.jpg'} />
@@ -73,7 +84,7 @@ const ProjectCreate = () => {
               id="thumbnail"
               type="file"
               accept="image/jpg,impge/png,image/jpeg,image/gif"
-              onChange={handleChange}
+              onChange={handleThumbnailChange}
             />
             <ThumbnailInput alt="profile_preview" src={url} />
           </Item>
@@ -123,9 +134,9 @@ const ProjectCreate = () => {
             type="textfield"
             variant="outlined"
             color="C4C4C4"
-            value={purpose}
+            value={intent}
             onChange={(e) => {
-              setPurpose(e.target.value);
+              setIntent(e.target.value);
             }}
           />
         </Section>
@@ -137,9 +148,9 @@ const ProjectCreate = () => {
             variant="outlined"
             color="C4C4C4"
             height="500px"
-            value={detail}
+            value={details}
             onChange={(e) => {
-              setDetail(e.target.value);
+              setDetails(e.target.value);
             }}
           />
         </Section>
