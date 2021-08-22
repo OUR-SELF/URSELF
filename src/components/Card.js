@@ -1,40 +1,91 @@
-import React from 'react'
+import React ,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { ProgressBar } from 'react-bootstrap';
+import axios from 'axios'
 function Card(props) {
-  const onClick = (e) => {
-    //좋아요 버튼 클릭 이벤트.
-  };
-  return (
-    <CardContainer>
-      <Link to="/">
-        <Image src={props.one.src}></Image>
-        <Title>{props.one.title}</Title>
-      </Link>
-      <Category>{props.one.category}</Category>
-      <Character>
-        <Ava_img src={props.one.src}></Ava_img>
-        <Username>{props.one.username}</Username>
-      </Character>
-      <ProgressBar now={0} />
+    const [name,setName]=useState("");
+    const [imgaddress,SetImgadress]=useState("");
+    const [userimg,setUserimg]=useState("");
+    const [url,Seturl]=useState("");
+    useEffect(() => {
+        var imgaddress="http://127.0.0.1:8000";
+        imgaddress+=props.one.thumbnail_image;
+        SetImgadress(imgaddress);
+        var user_img_add="http://127.0.0.1:8000";
+        var moveToUrl='/project/';
+        moveToUrl+=props.one.id;
+        console.log(moveToUrl);
+        Seturl(moveToUrl)
+        axios.get('http://127.0.0.1:8000/users/')//userlist가져오기
+        .then(response => {
+            
+            var step;
+            for(step=0; step<response.data.length; step++){
+                if(props.one.user === response.data[step].id){ //props.one.user
+                    setName(response.data[step].name);
+                    user_img_add+=response.data[step].profile_img;
+                    setUserimg(user_img_add);
+                
+                }
+            }
+        })
+        
+    }, [])
 
-      <FirstInfo>
-        <SubInfo>
-          <NumPeople>{props.one.numofPeople}명</NumPeople>
-          <Totalprice>{props.one.totalprice}원</Totalprice>
-        </SubInfo>
-        <Totalprice>{props.one.days}일 남음</Totalprice>
-      </FirstInfo>
+    useEffect(() => {
+       console.log(userimg);
+    }, [userimg])
+    
 
-      <SecondInfo>
-        <LikeButtons onClick={onClick}>
-          <div>♥{props.one.numofPeople}</div>
-        </LikeButtons>
-        <Price>{props.one.price}원</Price>
-      </SecondInfo>
-    </CardContainer>
-  );
+    const onClick=((e)=>{
+        //좋아요 버튼 클릭 이벤트.
+
+    });
+    return (
+        <CardContainer>
+            <Link to={url}>
+                <Image src={imgaddress}></Image> 
+                <Title>{props.one.name}</Title>
+            </Link>
+            <Category>{props.one.category}</Category>
+            <Character>
+                <Ava_img src={userimg}></Ava_img>
+                <Username>{name}</Username>
+            </Character>
+            <ProgressBar now={0} />
+
+            <FirstInfo>
+                <SubInfo>
+                    <NumPeople>
+                        {props.one.target_count}명
+                    </NumPeople>
+                    <Totalprice>
+                        {props.one.target_amount}원
+                    </Totalprice>
+                
+                </SubInfo>
+                <Totalprice>
+                24일 남음
+                </Totalprice>
+            </FirstInfo>
+
+            <SecondInfo>
+                <LikeButtons onClick={onClick}>
+                    <div>
+                        ♥{props.one.liked}
+                    </div>
+
+                </LikeButtons>
+                <Price>
+                    {props.one.price}원
+                </Price>
+            </SecondInfo>
+
+        </CardContainer>
+           
+        
+    )
 }
 const Image = styled.img`
   border-radius: 7%;
@@ -113,7 +164,6 @@ const Price= styled.div`
     font-family: 'GmarketSansBold', sans-serif;
     font-size:20px;
     padding-top:8px;
-
 `;
 const LikeButtons= styled.button`
    background-color: #ffffff;
