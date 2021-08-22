@@ -12,7 +12,6 @@ import ProjectCreate from 'pages/ProjectCreate';
 import Company from 'pages/Company';
 
 import Header from 'components/Header';
-import Company from 'pages/Company'
 import Footer from 'components/Footer'
 
 function App() {

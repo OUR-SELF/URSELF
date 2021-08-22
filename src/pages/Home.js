@@ -1,5 +1,4 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from 'react';
 import styled from 'styled-components/macro';
 import { Carousel } from 'react-bootstrap';
 import HomeIdea from 'components/HomeIdea';
@@ -48,4 +47,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Home;
