@@ -17,9 +17,9 @@ const SelectMenu = ({ value, setValue }) => {
         onChange={handleChange}
       >
         <MenuItem value={'game'}>게임/엔터테인먼트</MenuItem>
-        <MenuItem value={'food'}>푸드/리빙</MenuItem>
-        <MenuItem value={'fashion'}>패션/잡화</MenuItem>
-        <MenuItem value={'tech'}>테크/가전</MenuItem>
+        <MenuItem value={'food/living'}>푸드/리빙</MenuItem>
+        <MenuItem value={'fashion accessories'}>패션/잡화</MenuItem>
+        <MenuItem value={'crafts'}>테크/가전</MenuItem>
         <MenuItem value={'etc'}>기타</MenuItem>
       </Select>
     </FormControl>
