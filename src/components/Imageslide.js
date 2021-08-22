@@ -10,15 +10,16 @@ const FirstComment= styled.div`
     position:absolute;
     display:flex;
     flex-direction:column;
-    left:6%;
-    bottom:75%;
+    left:8%;
+    bottom:70%;
 `;
 const SecondComment= styled.div`
     font-family: 'GmarketSansBold', sans-serif;
     position:absolute;
     display:flex;
     flex-direction:column;
-    left:65%;
+    text-align: right;
+    left:68%;
     bottom:20%;
 `;
 const NameComment=styled.div`

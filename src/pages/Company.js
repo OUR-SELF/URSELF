@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CompanyCard from 'components/CompanyCard' 
+import Search from 'components/Search'
 function Company() {
   const list = [
     {
@@ -40,6 +41,7 @@ function Company() {
   const maplist = list.map((one) => {
     return <CompanyCard one={one} />;
   });
+  
   return (
     <>
       <ImageBanner src="/img/Company_banner.png"></ImageBanner>
@@ -53,6 +55,7 @@ function Company() {
 }
 
 export default Company;
+
 const Container = styled.div`
   max-width: 80vw;
   margin: auto;
@@ -60,18 +63,23 @@ const Container = styled.div`
   flex-direction: column;
   font-family: 'GmarketSansMedium', sans-serif;
 `;
+
 const ImageBanner = styled.img`
   margin-bottom: 30px;
 `;
+
 const Title = styled.div`
   font-family: 'GmarketSansBold', sans-serif;
   font-size: 32px;
   margin-bottom: 5%;
   border-bottom: 1px solid gray;
 `;
+
 const CardContainer= styled.div`
     display:flex;
-    justify-content: space-between;
+    justify-content:flex-start;
     text-align:justify;
     margin-bottom:5%;
+    flex-wrap:wrap;
+    margin-left:80px;
 `;
