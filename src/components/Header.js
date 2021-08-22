@@ -6,9 +6,11 @@ const Header = () => {
   return (
     <HeaderContainer>
       <div>
+        
         <Logo alt="logo" src="/images/URSELF-logo.png" />
+        
         <Link to="/project">제안된 프로젝트</Link>
-        <Link>함께하고 있는 기업</Link>
+        <Link to="/company">함께하고 있는 기업</Link>
       </div>
       <div>
         <Link>로그인</Link>
@@ -24,7 +26,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1000px;
+  width: 1200px;
   height: 40px;
   margin: 0 auto;
   div {

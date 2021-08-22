@@ -12,25 +12,26 @@ justify-content:center;
 text-align:center;`;
 
 const Top = styled.div`
+margin-left:30px;
+margin-right:30px;
 font-family: 'GmarketSansBold', sans-serif;
-
 display:flex;
 justify-content:space-between;
 text-align:center;
-margin-bottom:5%;
+margin-bottom:50px;
 `;
 
 const Plus= styled.div`
 font-family: 'GmarketSansMedium',sans-serif;
 font-size:15px;
 width:60px;
-margin-top:110%;
+margin-top:40%;
 padding-right:5%;
 
 `;
 
 const Title= styled.span`
-font-size:50px;`;
+font-size:32px;`;
 
 const CardContainer= styled.div`
 display:flex;

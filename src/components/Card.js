@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { ProgressBar } from 'react-bootstrap';
 function Card(props) {
+    const onClick=((e)=>{
+        //좋아요 버튼 클릭 이벤트.
+
+    });
     return (
         <CardContainer>
             <Link to="/">
@@ -32,11 +36,12 @@ function Card(props) {
             </FirstInfo>
 
             <SecondInfo>
-                <Buttons>
-                    <Buttons>
-                        <img src="/img/button.jpg"></img>
-                    </Buttons>
-                </Buttons>
+                <LikeButtons onClick={onClick}>
+                    <div>
+                        ♥{props.one.numofPeople}
+                    </div>
+
+                </LikeButtons>
                 <Price>
                     {props.one.price}원
                 </Price>
@@ -51,24 +56,23 @@ const Image= styled.img`
     border-radius:7%;
 `;
 const CardContainer=styled.div`
-font-family: 'GmarketSansMedium', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-weight:500;
 padding:15px;
 display:flex;
 flex-direction:column;
 box-shadow: 1px 3px 3px 2px gray;
 border-radius: 5%;
-
 `;
 const Title= styled.div`
-  
-    font-weight:300;
+    font-weight:700;
     display:flex;
     font-size:20px;
     padding-top:10px;
     padding-bottom:5px;
 `;
 const Category=styled.div`
-    font-family: 'GmarketSansMedium', sans-serif;
+    font-weight:400;
     font-size:15px;
     color:gray;
     display:flex;
@@ -80,7 +84,7 @@ const Character=styled.div`
     display:flex;
     text-align:center;
     margin-bottom:5%;
-    
+    font-weight:600;
 `;
 const Ava_img=styled.img`
     width:35px;
@@ -104,14 +108,11 @@ const SubInfo=styled.div`
 
 const NumPeople=styled.div` 
     font-size:13px;
-    font-family: 'GmarketSansBold', sans-serif;
-   
+    font-weight:700;
     margin-right:2%;
-
 `;
 const Totalprice= styled.div`
     font-size:13px;
-
 `;
 const SecondInfo=styled.div`
     margin-top:6%;
@@ -125,9 +126,17 @@ const Price= styled.div`
     padding-top:8px;
 
 `;
-const Buttons= styled.div`
-   font-family: 'GmarketSansMedium', sans-serif;
-   display:flex;
-
+const LikeButtons= styled.button`
+   background-color: #ffffff;
+   border-radius: 20%;
+   border:2px solid gray;
+   font-size:15px;
+   font-weight:700;
+   margin:3px;
+   color:gray;
+   div{
+    margin:5px;
+   }
+    
 `;
 export default Card

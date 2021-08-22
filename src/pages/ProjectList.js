@@ -6,8 +6,9 @@ import Search from 'components/Search';
 const ProjectList = () => {
   return (
     <>
-      <img alt="banner" src={'/images/top-banner.jpg'} />
+     
       <Container>
+        <img alt="banner" src={'/images/top-banner.png'} />
         <SelectBar>
           <div>
             <h2>전체보기</h2> <BiChevronDown size={24} />

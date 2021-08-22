@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import {Carousel} from 'react-bootstrap';
 import HomeIdea from 'components/HomeIdea';
 import ImageSlide from 'components/Imageslide';
 const Image= styled.img`
@@ -15,7 +14,7 @@ padding-bottom:5%;`;
 
 
 const Container= styled.div`
-max-width:1100px;
+max-width:80vw;
 margin:auto;
 display:flex;
 flex-direction:column;
@@ -23,7 +22,7 @@ justify-content:center;
 text-align:center;`;
 
 const CarouselContainer = styled.div`
-  max-width:1100px;
+  max-width:80vw;
   margin:auto;
   width:100%;
   height:30%;
@@ -31,9 +30,10 @@ const CarouselContainer = styled.div`
 
 const ServiceTitle = styled.h1`
 font-family: 'GmarketSansBold', sans-serif;
+margin-left:50px;
+margin-right :30px;
 margin-top:10%;
-font-size:50px;
-
+font-size:32px;
 display:flex;
 justify-content:flex-start;
 `;
@@ -44,8 +44,6 @@ function Home() {
 
         <ImageSlide/>
       </CarouselContainer>
-     
-     
       <Container>
         <ServiceTitle>서비스소개</ServiceTitle>
         <Image src="/img/service.jpg"></Image>
