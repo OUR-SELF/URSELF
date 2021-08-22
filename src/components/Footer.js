@@ -4,10 +4,12 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <FooterContainer>
-        <img alt="footer" src={'/images/footer.png'} style={{ margin: '0 auto' }} />
-
+      <img
+        alt="footer"
+        src={'/images/footer.png'}
+        style={{ margin: '0 auto' }}
+      />
     </FooterContainer>
-    
   );
 };
 

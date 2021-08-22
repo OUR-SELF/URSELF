@@ -4,8 +4,7 @@ import styled from 'styled-components/macro';
 import Card from './Card';
 
 const Container = styled.div`
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
