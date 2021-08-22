@@ -34,15 +34,17 @@ const Image=styled.img`
     width:100%;
 `;
 const CompanyCardContainer=styled.div`
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     max-width:230px;
-    font-family: 'GmarketSansMedium', sans-serif;
+    font-family:'Noto Sans KR', sans-serif;
     display:flex;
     flex-direction: column;
+    margin:50px;
+  
     
 `;
 
 const MoreInfoBox=styled.div`
-
     width:40%;
     margin-left:4%;
     margin-top:4%;
@@ -53,7 +55,7 @@ const CompanyName=styled.div`
     justify-content: flex-start;
     margin-top: 5%;
     margin-left:4%;
-    font-family: 'GmarketSansBold', sans-serif;
+    font-weight:700;
     font-size:14px;
     margin-bottom:3%;
 `;
@@ -70,16 +72,14 @@ const CompanyDesc= styled.div`
 `;
 const InfoBox=styled.div`
     border-bottom:3px solid #673AB7;
-    border-left:0.1px solid gray;
-    border-right:0.1px solid gray;
+  
 `;
 
 const MoreInfo = styled.div`
-   
     width:100%;
     display: flex;
     justify-content: space-between;
-    border:0.1px solid gray;
+    
 `;
 const MoreInfoCate=styled.div`
     margin-top:3%;

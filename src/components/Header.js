@@ -30,7 +30,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1000px;
+  width: 1200px;
   height: 40px;
   margin: 0 auto;
   div {
@@ -48,4 +48,5 @@ const Logo = styled.img`
   height: 60%;
   cursor: pointer;
   margin-right: 20px;
+  width:80px;
 `;
