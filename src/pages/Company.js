@@ -1,52 +1,31 @@
 import React from 'react'
-import styled from 'styled-components'
-import CompanyCard from 'components/CompanyCard' 
-import Search from 'components/Search'
+import styled from 'styled-components/macro';
+import { BiChevronDown } from 'react-icons/bi';
+import CompanyCard from 'components/CompanyCard';
+import Search from 'components/Search';
+import { companyData } from 'data';
+
 function Company() {
-  const list = [
-    {
-      src: '/img/cc1.jpg',
-      name: '주식회사 셀프메이드',
-      desc: '더 편한 생활용품을 만드는 <주식회사 셀프메이드> 입니다.',
-      category: '식품/리빙',
-      numofproject: '3개의 프로젝트',
-      heartsrc: '/img/emptyhart.jpg',
-    },
-    {
-      src: '/img/cc2.jpg',
-      name: '농업회사법인 주식회사 벗드림',
-      desc: '부산에서 생산되는 농산물을 이용하여 전통주를 만드는 회사입니다.',
-      category: '식품/리빙',
-      numofproject: '3개의 프로젝트',
-      heartsrc: '/img/emptyhart.jpg',
-    },
-    {
-      src: '/img/cc3.jpg',
-      name: '(주)마링',
-      desc: '(주)마링, 안고 자는 감정 일기,마봉이입니다.',
-      category: '공예',
-      numofproject: '1개의 프로젝트',
-      heartsrc: '/img/emptyhart.jpg',
-    },
-    {
-      src: '/img/cc4.jpg',
-      name: '(주)스퀴즈브루어리',
-      desc: '양조장비의 차이가 맥주 품질의 차이를 만듭니다.',
-      category: '식품/리빙',
-      numofproject: '3개의 프로젝트',
-      heartsrc: '/img/emptyhart.jpg',
-    },
-  ];
+  const list = companyData;
 
   const maplist = list.map((one) => {
     return <CompanyCard one={one} />;
   });
-  
+
   return (
     <>
       <ImageBanner src="/img/Company_banner.png"></ImageBanner>
       <Container>
-        <Title>전체보기</Title>
+        <SelectBar>
+          <div>
+            <h2>전체보기</h2> <BiChevronDown size={24} />
+          </div>
+          <div>
+            <Search />
+            <h4>추천순</h4> <BiChevronDown size={20} />
+          </div>
+        </SelectBar>
+        <Line />
         <CardContainer>{maplist}</CardContainer>
         <CardContainer>{maplist}</CardContainer>
       </Container>
@@ -56,9 +35,35 @@ function Company() {
 
 export default Company;
 
+const SelectBar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: 30px; */
+  font-family: 'GmarketSansBold', sans-serif;
+  div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    h2 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+  }
+`;
+
+const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #c4c4c4;
+  margin: 5px 0;
+`;
+
 const Container = styled.div`
   max-width: 80vw;
-  margin: auto;
+  margin: 0 auto 30px;
   display: flex;
   flex-direction: column;
   font-family: 'GmarketSansMedium', sans-serif;
@@ -68,18 +73,11 @@ const ImageBanner = styled.img`
   margin-bottom: 30px;
 `;
 
-const Title = styled.div`
-  font-family: 'GmarketSansBold', sans-serif;
-  font-size: 32px;
-  margin-bottom: 5%;
-  border-bottom: 1px solid gray;
-`;
-
-const CardContainer= styled.div`
-    display:flex;
-    justify-content:flex-start;
-    text-align:justify;
-    margin-bottom:5%;
-    flex-wrap:wrap;
-    margin-left:80px;
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+  /* margin-bottom:5%; */
+  flex-wrap: wrap;
+  /* margin-left: 80px; */
 `;

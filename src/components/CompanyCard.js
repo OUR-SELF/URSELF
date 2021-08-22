@@ -1,78 +1,67 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro';
 
 function CompanyCard(props) {
-    return (
-        <CompanyCardContainer>
-            <Image src={props.one.src}></Image> 
-            <InfoBox>
-                <CompanyName>
-                    {props.one.name}
-                </CompanyName>
-                <CompanyDesc>
-                    {props.one.desc}
-                </CompanyDesc>
-            </InfoBox>
-            <MoreInfo>
-                <MoreInfoBox>
-                    <MoreInfoCate>
-                        {props.one.category}
-                    </MoreInfoCate>
-                    <MoreInfoPro>
-                        {props.one.numofproject}
-                    </MoreInfoPro>
-                </MoreInfoBox>
-                <HeartImg src={props.one.heartsrc}>
-
-                </HeartImg>
-            </MoreInfo>
-           
-        </CompanyCardContainer>
-    )
+  return (
+    <CompanyCardContainer>
+      <Image src={props.one.src}></Image>
+      <InfoBox>
+        <CompanyName>{props.one.name}</CompanyName>
+        <CompanyDesc>{props.one.desc}</CompanyDesc>
+      </InfoBox>
+      <MoreInfo>
+        <MoreInfoBox>
+          <MoreInfoCate>{props.one.category}</MoreInfoCate>
+          <MoreInfoPro>{props.one.numofproject}</MoreInfoPro>
+        </MoreInfoBox>
+        <HeartImg src={props.one.heartsrc}></HeartImg>
+      </MoreInfo>
+    </CompanyCardContainer>
+  );
 }
-const Image=styled.img`
-    width:100%;
+const Image = styled.img`
+  width: 100%;
 `;
-const CompanyCardContainer=styled.div`
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    max-width:230px;
-    font-family:'Noto Sans KR', sans-serif;
-    display:flex;
-    flex-direction: column;
-    margin:50px;
-  
-    
-`;
-
-const MoreInfoBox=styled.div`
-    width:40%;
-    margin-left:4%;
-    margin-top:4%;
-    margin-bottom:4%;
-`;
-const CompanyName=styled.div`
-    display:flex;
-    justify-content: flex-start;
-    margin-top: 5%;
-    margin-left:4%;
-    font-weight:700;
-    font-size:14px;
-    margin-bottom:3%;
+const CompanyCardContainer = styled.div`
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-width: 230px;
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* margin:50px; */
+  margin: 10px 5px;
 `;
 
-const CompanyDesc= styled.div`
-    display:flex;
-    justify-content: flex-start;
-    color:#878787;
-    font-size:11px;
-    margin-left:5%;
-    margin-right:5%;
-    margin-bottom:7.5%;
-    
+const MoreInfoBox = styled.div`
+  width: 40%;
+  margin-left: 4%;
+  margin-top: 4%;
+  margin-bottom: 4%;
 `;
-const InfoBox=styled.div`
-    border-bottom:3px solid #673AB7;
-  
+const CompanyName = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5%;
+  margin-left: 4%;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 3%;
+`;
+
+const CompanyDesc = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  color: #878787;
+  font-size: 11px;
+  /* margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 7.5%; */
+  margin: 0 10px 10px;
+  padding-top: 5px;
+`;
+const InfoBox = styled.div`
+  min-height: 80px;
+  border-bottom: 3px solid #673ab7;
 `;
 
 const MoreInfo = styled.div`
