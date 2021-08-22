@@ -64,6 +64,7 @@ export default ProjectList;
 const Container = styled.div`
   width: 80vw;
   margin: 0 auto;
+  margin-bottom: 60px;
 `;
 
 const SelectBar = styled.div`
@@ -110,9 +111,11 @@ const YellowButton = styled.button`
   }
 `;
 const CardContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  /* margin-bottom: 50px; */
-  flex-wrap: wrap;
+  gap: 40px;
 `;
