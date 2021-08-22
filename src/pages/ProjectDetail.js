@@ -3,14 +3,14 @@ import axios from 'axios';
 import styled from 'styled-components/macro';
 import { FaUserCircle } from 'react-icons/fa';
 import { DiscussionEmbed } from 'disqus-react';
-import { defaultProject } from 'data';
+import { defaultProject, BASE_URL } from 'data';
 
 const ProjectDetail = ({ match }) => {
   const { id } = match.params;
   const [data, setData] = useState(defaultProject);
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/projects/' + id)
+      .get(BASE_URL + '/projects/' + id)
       .then((response) => {
         console.log(response);
         setData(response.data);
@@ -30,7 +30,7 @@ const ProjectDetail = ({ match }) => {
           </User>
         </FlexDiv>
         <FlexDiv>
-          <ProjectImage />
+          <ProjectImage src={BASE_URL + data.thumbnail_image} />
           <ProjectInfo>
             <div>
               <h4>
@@ -131,7 +131,7 @@ const User = styled.div`
   }
 `;
 
-const ProjectImage = styled.div`
+const ProjectImage = styled.img`
   margin-left: 10px;
   width: 350px;
   height: 350px;
