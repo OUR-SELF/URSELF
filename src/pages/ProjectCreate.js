@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SelectMenu from 'components/SelectMenu';
 import DatePicker from 'components/DatePicker';
+import {  BASE_URL } from 'data';
 
 const ProjectCreate = () => {
   const [title, setTitle] = useState('');
@@ -34,7 +35,6 @@ const ProjectCreate = () => {
   };
 
   const handleSubmit = () => {
-    console.log(url, typeof url);
     const data = {
       user: 1,
       name: title,
@@ -51,8 +51,8 @@ const ProjectCreate = () => {
       liked: 100,
     };
     axios
-      .post('http://127.0.0.1:8000/projects/', data)
-      .then(function (response) {
+      .post(BASE_URL + '/projects/', data)
+      .then((response) => {
         console.log(response);
       })
       .catch((err) => console.log(err.response));
