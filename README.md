@@ -58,18 +58,22 @@ URSELF는 소비자가 기업에게 프로젝트를 제안하고 주도적으로
 
 ## 💻 실행 방법
 
-### 1. Client
+### 1. Server
+
+#### &nbsp; &nbsp; [🔗 URSELF Django 서버 실행법 & API 명세서](https://docs.google.com/document/d/1lyAXc27KcUv14-ucp2EYbG7QWYA24h27-gBuacgT3Ns/edit#) 
+
+### 2. Client
 
 ```bash
+
 // Installation
 $ yarn install
 
 // Start
 $ yarn start
+
 ```
 
-### 2. Server
 
-#### [🔗 URSELF Django 서버 실행법 & API 명세서](https://docs.google.com/document/d/1lyAXc27KcUv14-ucp2EYbG7QWYA24h27-gBuacgT3Ns/edit#) 
 
 <br/>
