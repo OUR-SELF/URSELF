@@ -30,7 +30,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1200px;
+  width: 80vw;
   height: 40px;
   margin: 0 auto;
   div {
