@@ -5,12 +5,13 @@ import { ProgressBar } from 'react-bootstrap';
 import axios from 'axios';
 import { BASE_URL } from 'data';
 
+const defaultUserName = '장하얀';
+const defaultUserImg = `${BASE_URL}/media/profile-default-img`;
+
 const Card = (props) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState(defaultUserName);
   const [imgaddress, SetImgadress] = useState('');
-  const [userImg, setUserImg] = useState(
-    `${BASE_URL}/media/profile-default-img`,
-  );
+  const [userImg, setUserImg] = useState(defaultUserImg);
   const [url, Seturl] = useState('');
   useEffect(() => {
     var imgaddress = 'http://127.0.0.1:8000';
@@ -28,7 +29,10 @@ const Card = (props) => {
         for (step = 0; step < response.data.length; step++) {
           if (props.one.user === response.data[step].id) {
             //props.one.user
-            setName(response.data[step].name);
+            const userName = response.data[step].name;
+            if (userName) {
+              setName(userName);
+            }
             user_img_add += response.data[step].profile_img;
 
             if (user_img_add) {
@@ -40,7 +44,7 @@ const Card = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(props.one.id, userImg);
+    console.log(props.one.id, userImg, name);
   }, [userImg]);
 
   const onClick = (e) => {
