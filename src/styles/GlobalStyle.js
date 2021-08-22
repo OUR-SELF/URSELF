@@ -18,14 +18,13 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
   @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-	
+
   * {
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
   }
   html {
     font-size: 62.5%;
-
   }
   a {
     font-family: 'Noto Sans KR', sans-serif;

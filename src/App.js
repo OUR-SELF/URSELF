@@ -8,6 +8,7 @@ import SignUp from 'pages/SignUp';
 import EmailSignUp from 'pages/EmailSignUp';
 import ProjectList from 'pages/ProjectList';
 import ProjectDetail from 'pages/ProjectDetail';
+import Company from 'pages/Company'
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -18,6 +19,8 @@ function App() {
       <GlobalStyle />
       <Header />
       <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/company" exact component={Company}/>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
