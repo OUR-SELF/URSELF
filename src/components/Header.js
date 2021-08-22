@@ -1,18 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 const Header = () => {
+  const history = useHistory();
+
   return (
     <HeaderContainer>
       <div>
-        
+        <Logo
+          alt="logo"
+          src="/images/URSELF-logo.png"
+          onClick={() => history.push('/')}
+        />
         <Link to="/project">제안된 프로젝트</Link>
         <Link to="/company">함께하고 있는 기업</Link>
       </div>
       <div>
-        <Link>로그인</Link>
-        <Link>회원가입</Link>
+        <Link to="/login">로그인</Link>
+        <Link to="/signup">회원가입</Link>
       </div>
     </HeaderContainer>
   );
@@ -31,8 +37,8 @@ const HeaderContainer = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-
     a {
+      font-size: 12px;
       margin-right: 10px;
     }
   }

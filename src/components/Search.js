@@ -24,6 +24,8 @@ const SearchIcon = styled(BsSearch)`
 `;
 
 const Input = styled.input`
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
   padding: 5px 7px 5px 45px;
   margin: 10px;
   width: 300px;
