@@ -90,8 +90,8 @@ function Card(props) {
 const Image = styled.img`
   border-radius: 7%;
   width: 270px;
-  object-fit: contain: ;
 `;
+
 const CardContainer = styled.div`
   width: 300px;
   font-family: 'Noto Sans KR', sans-serif;
@@ -99,7 +99,7 @@ const CardContainer = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 5%;
   /* margin-right: 20px; */
   margin-bottom: 30px;

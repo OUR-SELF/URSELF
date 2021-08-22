@@ -105,7 +105,7 @@ const YellowButton = styled.button`
   background-color: #ffd600;
   border-radius: 8px;
   backdrop-filter: blur(4px);
-  /* margin-bottom: 50px; */
+  margin: 30px 0 50px 0;
   span {
     margin-left: 20px;
   }
