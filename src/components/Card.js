@@ -6,7 +6,7 @@ import axios from 'axios';
 import { BASE_URL } from 'data';
 
 const defaultUserName = '장하얀';
-const defaultUserImg = `${BASE_URL}/media/profile-default-img`;
+const defaultUserImg = `${BASE_URL}/media/profile-default-img.png`;
 
 const Card = (props) => {
   const [name, setName] = useState(defaultUserName);
