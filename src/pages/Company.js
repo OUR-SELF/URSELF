@@ -44,7 +44,7 @@ function Company() {
   
   return (
     <>
-      <ImageBanner src="/img/Company__banner.jpg"></ImageBanner>
+      <ImageBanner src="/img/Company_banner.png"></ImageBanner>
       <Container>
         <Title>전체보기</Title>
         <CardContainer>{maplist}</CardContainer>
@@ -65,10 +65,10 @@ const Container = styled.div`
 `;
 
 const ImageBanner = styled.img`
-  margin-bottom: 4%;
+  margin-bottom: 30px;
 `;
 
-constTitle = styled.div`
+const Title = styled.div`
   font-family: 'GmarketSansBold', sans-serif;
   font-size: 32px;
   margin-bottom: 5%;

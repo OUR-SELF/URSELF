@@ -1,22 +1,24 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { BiPlusCircle, BiChevronDown } from 'react-icons/bi';
 import Search from 'components/Search';
 import Card from 'components/Card';
 const ProjectList = () => {
+  const history = useHistory();
   const list=[{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
     {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
     {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"},
     ,{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"}
     ,{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"}
-    ,{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"},
-    
-    
+    ,{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"},  
   ];
+
   const maplist = list.map((one)=>{
     return <Card one={one}/>
 
   })
+  
   return (
     <>
      
@@ -32,7 +34,7 @@ const ProjectList = () => {
           </div>
         </SelectBar>
         <Line />
-        <YellowButton>
+        <YellowButton onClick={() => history.push('/project/create')}>
           <BiPlusCircle size={22} />
           <span>펀딩 아이디어 제안하기</span>
         </YellowButton>
@@ -101,6 +103,5 @@ const CardContainer= styled.div`
   justify-content:space-evenly;
   text-align:center;
   margin-bottom:50px;
-  flex-wrap: wrap;
-  
+  flex-wrap: wrap; 
 `;
