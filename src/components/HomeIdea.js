@@ -46,16 +46,11 @@ function HomeIdea() {
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/projects/')
         .then(response => {
-            console.log(response)
-            setPosts(response.data);
-            console.log(posts);
-            
+            setPosts(response.data); //projects 목록 받아서 posts배열에 저장.
         })
-        
     }, [])
     useEffect(()=>{
         console.log(posts);
-
     },[posts])
 
     const list=[{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },

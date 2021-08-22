@@ -30,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     color: inherit;
     text-decoration: none;
+    :hover {
+      color: #2c0385;
+    }
   }
   ol,
   ul,
@@ -54,6 +57,11 @@ const GlobalStyle = createGlobalStyle`
     height: 1px;
     clip: rect(1px, 1px, 1px, 1px);
   }
+  input {
+    ::placeholder {
+    color: #c4c4c4;
+  }
+}
 	`;
 
 export default GlobalStyle;
