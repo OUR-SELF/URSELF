@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BiPlusCircle, BiChevronDown } from 'react-icons/bi';
 import Search from 'components/Search';
 import Card from 'components/Card';
+import axios from 'axios'
 const ProjectList = () => {
   const list=[{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
     {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },

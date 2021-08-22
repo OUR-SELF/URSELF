@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState,useEffect}from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Card from './Card';
@@ -26,12 +27,12 @@ font-family: 'GmarketSansMedium',sans-serif;
 font-size:15px;
 width:60px;
 margin-top:40%;
-padding-right:5%;
-
+padding-right:5%; 
 `;
 
 const Title= styled.span`
 font-size:32px;`;
+
 
 const CardContainer= styled.div`
 display:flex;
@@ -41,12 +42,35 @@ text-align:center;
 
 
 function HomeIdea() {
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/projects/')
+        .then(response => {
+            console.log(response)
+            setPosts(response.data);
+            console.log(posts);
+            
+        })
+        
+    }, [])
+    useEffect(()=>{
+        console.log(posts);
+
+    },[posts])
+
     const list=[{src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
     {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000",totalprice:"560,000" },
     {src:"/img/card1.jpg",title:"끈적임 없는 참마크림, 비건크림", category:"뷰티", username:"강민정" , numofPeople:34, days:24, price:"50,000" ,totalprice:"560,000"}];
     const maplist =list.map((one)=> {
         return (
             <Card one={one}/>
+        );
+
+    })
+
+    const mapposts=posts.map((one)=>{
+        return(
+<           Card one={one}/>
         );
 
     })
@@ -57,7 +81,7 @@ function HomeIdea() {
                 <Link to="/project"><Plus>더보기</Plus></Link>
             </Top>
             <CardContainer>
-                {maplist}
+                {mapposts}
             </CardContainer>
                 
         </Container>

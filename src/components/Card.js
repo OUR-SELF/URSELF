@@ -1,8 +1,9 @@
-import React from 'react'
+import React ,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { ProgressBar } from 'react-bootstrap';
 function Card(props) {
+    const [days,setDays]= useState(); 
     const onClick=((e)=>{
         //좋아요 버튼 클릭 이벤트.
 
@@ -11,7 +12,7 @@ function Card(props) {
         <CardContainer>
             <Link to="/">
                 <Image src={props.one.src}></Image> 
-                <Title>{props.one.title}</Title>
+                <Title>{props.one.name}</Title>
             </Link>
             <Category>{props.one.category}</Category>
             <Character>
@@ -23,22 +24,22 @@ function Card(props) {
             <FirstInfo>
                 <SubInfo>
                     <NumPeople>
-                        {props.one.numofPeople}명
+                        {props.one.target_count}명
                     </NumPeople>
                     <Totalprice>
-                        {props.one.totalprice}원
+                        {props.one.target_amount}원
                     </Totalprice>
                 
                 </SubInfo>
                 <Totalprice>
-                {props.one.days}일 남음
+                24일 남음
                 </Totalprice>
             </FirstInfo>
 
             <SecondInfo>
                 <LikeButtons onClick={onClick}>
                     <div>
-                        ♥{props.one.numofPeople}
+                        ♥{props.one.liked}
                     </div>
 
                 </LikeButtons>
@@ -126,7 +127,6 @@ const Price= styled.div`
     font-family: 'GmarketSansBold', sans-serif;
     font-size:20px;
     padding-top:8px;
-
 `;
 const LikeButtons= styled.button`
    background-color: #ffffff;
